@@ -61,29 +61,6 @@ if ($verifica) {
 ```
 
 ### **Dettagli dell'Implementazione**
-- **Form HTML
-  <form>
-    <input type="text" name="email">
-    <input type="submit">
-</form>
-- **Utilizzo della Classe
-  $convalida = new Convalida();
-$verifica = $convalida->check($_POST, array(
-    'email' => array(
-        'required' => true,
-        'mailcheck' => true
-    )
-));
-
-if ($verifica) {
-    echo "L'input è stato convalidato con successo!";
-} else {
-    $errori = $convalida->errori();
-    foreach($errori as $errore) {
-        echo $errore . "<br>";
-    }
-}
-
 - **Creazione di un'istanza e invocazione del metodo `check`**:
     - **Primo parametro (`$_POST`)**: Rappresenta l'array associativo contenente tutti i dati inviati dal form.
     - **Secondo parametro**: Un array associativo delle regole di convalida.
