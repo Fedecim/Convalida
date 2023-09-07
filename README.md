@@ -26,3 +26,76 @@ La classe `Convalida` è stata ideata per gestire il processo di verifica e conv
     - Usato internamente dalla classe per aggiungere un messaggio di errore all'array `**$errori**`.
 
 ### Esempio di Utilizzo:
+Ecco il testo migliorato con il linguaggio Markdown:
+
+---
+
+## **Form HTML**
+
+```html
+<form>
+    <input type="text" name="email">
+    <input type="submit">
+</form>
+```
+
+## **Utilizzo della Classe**
+
+```php
+$convalida = new Convalida();
+$verifica = $convalida->check($_POST, array(
+    'email' => array(
+        'required' => true,
+        'mailcheck' => true
+    )
+));
+
+if ($verifica) {
+    echo "L'input è stato convalidato con successo!";
+} else {
+    $errori = $convalida->errori();
+    foreach($errori as $errore) {
+        echo $errore . "<br>";
+    }
+}
+```
+
+### **Dettagli dell'Implementazione**
+- **Form HTML
+  <form>
+    <input type="text" name="email">
+    <input type="submit">
+</form>
+- **Utilizzo della Classe
+  $convalida = new Convalida();
+$verifica = $convalida->check($_POST, array(
+    'email' => array(
+        'required' => true,
+        'mailcheck' => true
+    )
+));
+
+if ($verifica) {
+    echo "L'input è stato convalidato con successo!";
+} else {
+    $errori = $convalida->errori();
+    foreach($errori as $errore) {
+        echo $errore . "<br>";
+    }
+}
+
+- **Creazione di un'istanza e invocazione del metodo `check`**:
+    - **Primo parametro (`$_POST`)**: Rappresenta l'array associativo contenente tutti i dati inviati dal form.
+    - **Secondo parametro**: Un array associativo delle regole di convalida.
+        * La chiave (in questo esempio, `'email'`) corrisponde all'attributo `name` del campo input nel form.
+        * Le regole di validazione sono sottocampi all'interno di questa chiave. Nel nostro esempio, l'email deve essere:
+            1. Obbligatoria: `'required' => true`
+            2. Una email valida: `'mailcheck' => true`
+
+- **Gestione dei Risultati**:
+    * Se la funzione `check` restituisce `true`, l'input è valido e viene visualizzato un messaggio di successo.
+    * In caso contrario, vengono elencati gli errori di convalida.
+
+---
+
+Con questo setup, ci assicuriamo che l'input email fornito sia sia obbligatorio che conforme a un formato email valido.
