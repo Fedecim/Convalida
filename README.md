@@ -73,5 +73,3 @@ if ($verifica) {
     * In caso contrario, vengono elencati gli errori di convalida.
 
 ---
-
-Con questo setup, ci assicuriamo che l'input email fornito sia sia obbligatorio che conforme a un formato email valido.
