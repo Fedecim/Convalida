@@ -26,7 +26,6 @@ La classe `Convalida` è stata ideata per gestire il processo di verifica e conv
     - Usato internamente dalla classe per aggiungere un messaggio di errore all'array `**$errori**`.
 
 ### Esempio di Utilizzo:
-Ecco il testo migliorato con il linguaggio Markdown:
 
 ---
 
